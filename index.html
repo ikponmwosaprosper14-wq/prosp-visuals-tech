@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Prosp Visuals & Tech – Graphic Design, Branding & Web Development">
+<title>Prosp Visuals & Tech</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f9f9f9;color:#333;line-height:1.6}
+
+/* Header */
+header{
+display:flex;justify-content:space-between;align-items:center;
+padding:20px 40px;background:#fff;
+box-shadow:0 2px 5px rgba(0,0,0,.1);
+position:sticky;top:0;z-index:1000
+}
+.logo{max-height:120px}
+nav a{margin:0 15px;text-decoration:none;font-weight:bold;color:#333;cursor:pointer}
+nav a:hover{color:#007bff}
+
+/* Sections */
+section{padding:60px 20px;max-width:1200px;margin:auto}
+.page{display:none}
+.page.active{display:block}
+
+/* Hero */
+.hero{text-align:center;background:#e9f5ff}
+.hero h1{font-size:2.6rem}
+.hero p{font-size:1.2rem;margin:10px 0 20px}
+
+/* Buttons */
+.cta-btn,.whatsapp{
+display:inline-block;padding:14px 30px;border-radius:50px;
+text-decoration:none;font-weight:bold;
+transition:.3s
+}
+.cta-btn{background:#007bff;color:#fff}
+.cta-btn:hover{background:#0056b3;transform:scale(1.05)}
+.whatsapp{background:#25D366;color:#fff;margin-top:20px}
+.whatsapp:hover{transform:scale(1.05)}
+
+/* Grids */
+.services-grid,.gallery-grid,.testimonial-grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;margin-top:30px
+}
+
+/* Cards */
+.card,.testimonial{
+background:#fff;padding:25px;border-radius:12px;
+box-shadow:0 4px 8px rgba(0,0,0,.1);
+transition:.4s
+}
+.card:hover{transform:translateY(-8px)}
+
+/* Gallery */
+.gallery-grid img{
+width:100%;border-radius:12px;cursor:pointer;
+transition:.4s
+}
+.gallery-grid img:hover{transform:scale(1.05)}
+
+/* About */
+.about{text-align:center}
+.about p{max-width:800px;margin:15px auto;font-size:1.1rem}
+
+/* Testimonials */
+.testimonial{font-style:italic}
+.testimonial span{display:block;margin-top:10px;font-weight:bold}
+
+/* Contact */
+form{max-width:500px;margin:auto;display:flex;flex-direction:column;gap:15px}
+input,textarea{padding:12px;border-radius:5px;border:1px solid #ccc}
+button{padding:12px;background:#007bff;color:#fff;border:none;border-radius:5px;font-weight:bold;cursor:pointer}
+button:hover{background:#0056b3}
+
+/* Comments */
+.comments-section{max-width:500px;margin:30px auto}
+.comments-section li{
+background:#fff;padding:10px;margin-bottom:10px;border-radius:5px
+}
+
+/* Footer */
+footer{text-align:center;padding:20px;background:#fff;margin-top:50px}
+
+/* Lightbox */
+#lightbox{
+display:none;position:fixed;top:0;left:0;
+width:100%;height:100%;background:rgba(0,0,0,.85);
+justify-content:center;align-items:center;z-index:9999
+}
+#lightbox img{max-width:90%;max-height:90%;border-radius:10px}
+
+/* Scroll Animation */
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:opacity .8s ease, transform .8s ease
+}
+.reveal.active{
+opacity:1;
+transform:translateY(0)
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="https://i.ibb.co/whLgckzT/file-00000000e1f0722f9b76a9b56f7be56d.png" class="logo">
+<nav>
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('services')">Services</a>
+<a onclick="showPage('contact')">Contact</a>
+</nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="page active hero reveal">
+<h1>Prosp Visuals & Tech</h1>
+<p>Designing brands. Building websites. Growing businesses.</p>
+<a class="cta-btn" href="https://wa.me/2349164839841" target="_blank">Hire Us</a>
+
+<section class="about reveal">
+<h2>About Us</h2>
+<p>
+We help businesses stand out with professional graphic design,
+branding, and modern websites that convert visitors into clients.
+</p>
+</section>
+
+<section class="reveal">
+<h2>Our Services</h2>
+<div class="services-grid">
+<div class="card">Graphic Design</div>
+<div class="card">Branding</div>
+<div class="card">Web Development</div>
+<div class="card">Business Websites</div>
+<div class="card">And More…</div>
+</div>
+</section>
+
+<section class="reveal">
+<h2>Our Work Previews</h2>
+<div class="gallery-grid">
+<img src="https://i.ibb.co/zTrsx3C7/unnamed-45-1.jpg" onclick="openLightbox(this)">
+<img src="https://i.ibb.co/VYm9KTCr/9ea4e17651fe097c9b47234ea5a0bd60.jpg" onclick="openLightbox(this)">
+<img src="https://i.ibb.co/PZQH1WLs/5c761ee0bdc1fc9f73a77644b299b6ca.jpg" onclick="openLightbox(this)">
+<img src="https://i.ibb.co/qLfFYrg5/f31638095373c7c7c663e1958cad0b26.jpg" onclick="openLightbox(this)">
+<img src="https://i.ibb.co/zV7R8WPL/edc8c0539c1470492c6a149878a6082d.jpg" onclick="openLightbox(this)">
+<img src="https://i.ibb.co/DDrTCB7k/658dcc985f600b131772eff359c0db1e.jpg" onclick="openLightbox(this)">
+<img src="https://i.ibb.co/NgVqHTvt/72bb367d878719a1d59de4eae1c1e2b9.jpg" onclick="openLightbox(this)">
+</div>
+</section>
+
+<section class="reveal">
+<h2>Client Reviews</h2>
+<div class="testimonial-grid">
+<div class="testimonial">“Top-notch designs and fast delivery.”<span>— Client A</span></div>
+<div class="testimonial">“Professional and creative service.”<span>— Client B</span></div>
+<div class="testimonial">“Highly recommended!”<span>— Client C</span></div>
+</div>
+</section>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page reveal">
+<h1>Contact Us</h1>
+<form id="contactForm">
+<input name="name" placeholder="Your Name" required>
+<textarea name="message" placeholder="Your Message" required></textarea>
+<button>Submit</button>
+</form>
+
+<div class="comments-section">
+<ul id="commentsList"></ul>
+</div>
+
+<a class="whatsapp" href="https://wa.me/2349164839841" target="_blank">Chat on WhatsApp</a>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()">
+<img id="lightboxImg">
+</div>
+
+<footer>
+<p>© 2026 Prosp Visuals & Tech</p>
+</footer>
+
+<script>
+function showPage(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'))
+document.getElementById(id).classList.add('active')
+window.scrollTo(0,0)
+}
+
+/* Lightbox */
+function openLightbox(img){
+document.getElementById('lightbox').style.display='flex'
+document.getElementById('lightboxImg').src=img.src
+}
+function closeLightbox(){
+document.getElementById('lightbox').style.display='none'
+}
+
+/* Comments */
+document.getElementById('contactForm').addEventListener('submit',e=>{
+e.preventDefault()
+let li=document.createElement('li')
+li.textContent=e.target.name.value+": "+e.target.message.value
+document.getElementById('commentsList').appendChild(li)
+e.target.reset()
+})
+
+/* Scroll Reveal */
+const reveals=document.querySelectorAll('.reveal')
+window.addEventListener('scroll',()=>{
+reveals.forEach(el=>{
+const top=el.getBoundingClientRect().top
+if(top<window.innerHeight-100){el.classList.add('active')}
+})
+})
+</script>
+
+</body>
+</html>
